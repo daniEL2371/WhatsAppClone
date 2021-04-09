@@ -11,6 +11,7 @@ import {
 } from "@expo/vector-icons";
 import MainTabNavigator from "./MainTabNavigator";
 import ChatRoomScreen from "../screens/ChatRoomScreen";
+import ContactsScreen from "../screens/ContactsScreen";
 
 const Stack = createStackNavigator();
 function AppNavigator(props) {
@@ -58,6 +59,13 @@ function AppNavigator(props) {
               />
             </View>
           ),
+        })}
+      />
+      <Stack.Screen
+        name="Contacts"
+        component={ContactsScreen}
+        options={({ route }) => ({
+          title: "Contacts",
         })}
       />
     </Stack.Navigator>
