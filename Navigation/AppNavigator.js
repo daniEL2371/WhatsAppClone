@@ -4,6 +4,7 @@ import Colors from "../config/Colors";
 import RootScreen from "../screens/RootScreen";
 import { StyleSheet, View } from "react-native";
 import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import MainTabNavigator from "./MainTabNavigator";
 
 const Stack = createStackNavigator();
 function AppNavigator(props) {
@@ -12,13 +13,15 @@ function AppNavigator(props) {
       screenOptions={{
         headerStyle: {
           backgroundColor: Colors.tintColor,
+          shadowOpacity: 0,
+          elevation: 0,
         },
         headerTintColor: Colors.white,
       }}
     >
       <Stack.Screen
-        name="Root"
-        component={RootScreen}
+        name="Main"
+        component={MainTabNavigator}
         options={{
           title: "WhatsApp",
           headerRight: () => (
@@ -39,7 +42,7 @@ function AppNavigator(props) {
 const styles = StyleSheet.create({
   headerRight: {
     marginRight: 10,
-    width: 70,
+    width: 100,
     flexDirection: "row",
     justifyContent: "space-around",
   },
