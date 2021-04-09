@@ -3,8 +3,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Colors from "../config/Colors";
 import RootScreen from "../screens/RootScreen";
 import { StyleSheet, View } from "react-native";
-import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Octicons,
+  MaterialCommunityIcons,
+  FontAwesome5,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import MainTabNavigator from "./MainTabNavigator";
+import ChatRoomScreen from "../screens/ChatRoomScreen";
 
 const Stack = createStackNavigator();
 function AppNavigator(props) {
@@ -36,6 +42,24 @@ function AppNavigator(props) {
           ),
         }}
       />
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          title: route.params.name,
+          headerRight: () => (
+            <View style={styles.ChatRoomHeaderRigth}>
+              <MaterialIcons name="call" color={Colors.white} size={22} />
+              <FontAwesome5 name="video" color={Colors.white} size={22} />
+              <MaterialCommunityIcons
+                color={Colors.white}
+                name="dots-vertical"
+                size={22}
+              />
+            </View>
+          ),
+        })}
+      />
     </Stack.Navigator>
   );
 }
@@ -45,6 +69,12 @@ const styles = StyleSheet.create({
     width: 100,
     flexDirection: "row",
     justifyContent: "space-around",
+  },
+  ChatRoomHeaderRigth: {
+    marginRight: 10,
+    width: 110,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
