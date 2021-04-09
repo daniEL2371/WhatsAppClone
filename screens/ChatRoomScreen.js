@@ -10,6 +10,7 @@ import { useRoute } from "@react-navigation/native";
 import Chats from "../data/Chats";
 import ChatMessage from "../components/ChatMessage";
 import BG from "../assets/BG.png";
+import InputBox from "../components/InputBox";
 
 const chats = Chats.messages;
 const ChatRoomScreen = (props) => {
@@ -23,6 +24,7 @@ const ChatRoomScreen = (props) => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <ChatMessage message={item} />}
       />
+      <InputBox />
     </ImageBackground>
   );
 };
