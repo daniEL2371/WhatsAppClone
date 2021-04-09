@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import RootScreen from "../screens/RootScreen";
 import Colors from "../config/Colors";
 import { Fontisto } from "@expo/vector-icons";
+import ChatScreen from "../screens/ChatScreeen";
 const Tabs = createMaterialTopTabNavigator();
 const MainTabNavigator = (props) => {
   return (
@@ -29,7 +30,7 @@ const MainTabNavigator = (props) => {
           tabBarLabel: () => null,
         }}
       ></Tabs.Screen>
-      <Tabs.Screen name="Chats" component={RootScreen}></Tabs.Screen>
+      <Tabs.Screen name="Chats" component={ChatScreen}></Tabs.Screen>
       <Tabs.Screen name="Status" component={RootScreen}></Tabs.Screen>
       <Tabs.Screen name="Calls" component={RootScreen}></Tabs.Screen>
     </Tabs.Navigator>
