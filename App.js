@@ -8,13 +8,16 @@ import {
   Text,
 } from "react-native";
 import AppNavigator from "./Navigation/AppNavigator";
+import AuthNavigator from "./Navigation/AuthNavigator";
+import Login from "./screens/Login";
 
 class App extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.screen}>
         <NavigationContainer>
-          <AppNavigator />
+          {/* <AppNavigator /> */}
+          <AuthNavigator />
         </NavigationContainer>
       </SafeAreaView>
     );
